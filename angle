@@ -1,0 +1,37 @@
+import java.util.Scanner;
+
+public class TriangleAngles {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter first angle: ");
+        int angle1 = scanner.nextInt();
+
+        System.out.print("Enter second angle: ");
+        int angle2 = scanner.nextInt();
+
+        System.out.print("Enter third angle: ");
+        int angle3 = scanner.nextInt();
+
+        if (isValidTriangle(angle1, angle2, angle3)) {
+            System.out.println("The angles can form a triangle.");
+        } else {
+            System.out.println("The angles cannot form a triangle.");
+        }
+    }
+
+    public static boolean isValidTriangle(int angle1, int angle2, int angle3) {
+        // Check if the sum of the angles is 180 degrees
+        if (angle1 + angle2 + angle3!= 180) {
+            return false;
+        }
+
+        // Check if any angle is greater than or equal to 180 degrees
+        if (angle1 >= 180 || angle2 >= 180 || angle3 >= 180) {
+            return false;
+        }
+
+        // If all conditions are met, the angles can form a triangle
+        return true;
+    }
+}
